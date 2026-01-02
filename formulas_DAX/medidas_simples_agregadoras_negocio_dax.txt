@@ -1,0 +1,4 @@
+
+Formulas dax:
+
+Total de pedidos = COUNTROWS(Facto_vendas)

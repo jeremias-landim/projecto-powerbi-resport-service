@@ -1,0 +1,53 @@
+
+CONFIGURAÇÕES DE SOFTWARES
+
+SQL SERVER 2022:
+é servidor do banco de dados, na versao developer tem todos as funcionalidade do ambiente corporativo mas
+nao pode ser utilizado em producao.
+
+SQL Service maneigement Studio - Sistema de gerenciamento do banco de dados SQL server 
+
+----------------------------------------------------
+Credencial banco de dados
+----------------------------------------------------
+server name :  localhost\SQL2022 ou Nome-PC\SQL2022 ()
+user        :  sa
+senha       :  (minha palavra passe)
+----------------------------------------------------
+
+
+POWER BI REPORT SERVICE (PBIRS)
+É um servidor para relatorios de POWER BI em servidores da empresa , ou seja , quando a empresa nao 
+quer que os seus servicos ficam em ambientes da nuvem MICROSOFT isolam os reports PBIX em servidores PBIRS.
+Recebe tanto relatorio em Dashboard ou paginados, tem periodo de avaliacao teste de 180 dias podendo vir ser reinstalado isso em ambiente teste.
+O PBIRS e uma evolucao do SSRS pacote do relatorio contido no kit BI da microsoft que contem SISS e SASS.
+
+---------------------------------------------------------
+Processo de instalcao PBIRS
+---------------------------------------------------------
+Executar o executavel baixado no site na microsoft 
+configurar o PBIRS (configuracao banco de dados, deixar Restante padrao web url e service url) 
+clicar em apply por cada etapada de configuracao.
+
+Acesso apos instalacao 
+---------------------------------------------------------
+Nota: Para navegar/ver relatórios → usa /reports
+link web portal url  : http://localhost/reports
+
+Nota : Para publicar relatórios → PBIRS usa ReportServer
+link web service url : http://localhost/ReportServer
+---------------------------------------------------------
+
+POWER BI FOR DESKTOP REPORT SERVICE 
+E o ambiente de desenvolvimento de relatorios para PBIRS, nao e semelhante ao ao Power bi desktop comum
+tem uma atualizacao mas lenta que o PBI desktop ela e atualizada de 3 em 3 meses e tem de estar na mesma 
+versao do PBIRS instalada para evitar comflitos.
+
+
+SIMULANDO AMBIENTE EMPRESA
+---------------------------
+No portal acessar Manage -> segurity -> adicionar usuario e remover usuario
+No ambiente real e feito por active direct criando grupo de usuarios 
+
+Visual Studio Community 2022
+instalar SSDT e extensoes SSAS , SSRS , SSIS

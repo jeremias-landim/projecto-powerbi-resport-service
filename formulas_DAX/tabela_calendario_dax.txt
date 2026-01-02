@@ -1,0 +1,46 @@
+CALENDARIO versão normal basica
+
+Calendario = 
+var ano_inicio = 2008
+var ano_fim    = 2026
+
+RETURN 
+ADDCOLUMNS(
+    CALENDAR("01/01/"&ano_inicio , "31/12/"&ano_fim),
+    "Ano", YEAR([Date]),
+    "Mês", MONTH([Date]),
+    "Nome do Mês", FORMAT([Date], "MMMM"),
+    "Ano/Mes",  FORMAT([Date], "yyyy/mm"),
+    "Dia da Semana", WEEKDAY([Date], 2), // 2 = Segunda como dia 1
+    "Trimestre", "T" & QUARTER([Date]),
+    "Semestre", "S" & IF(MONTH([Date]) <= 6, 1, 2)
+)
+
+Adptando a Data porque nao estou conseguindo uma conversao no PBIRS for Desktop criei codigo para as Datas
+
+Calendario = 
+VAR ano_inicio = 2008
+VAR ano_fim    = 2026
+
+RETURN
+ADDCOLUMNS(
+    CALENDAR(
+        DATE(ano_inicio, 1, 1),
+        DATE(ano_fim, 12, 31)
+    ),
+    // adaptacao de data como numero
+    "Codigo_Data_numero",
+        YEAR([Date]) * 10000 +
+        MONTH([Date]) * 100 +
+        DAY([Date]),
+    // adaptacao de data como texto
+    "codigo_data_texto", FORMAT([Date], "yyyyMMdd"),
+    "Ano", YEAR([Date]),
+    "Mês", MONTH([Date]),
+    "Dia", DAY([Date]),
+    "Nome do Mês", FORMAT([Date], "MMMM"),
+    "Ano/Mes", FORMAT([Date], "yyyy/MM"),
+    "Dia da Semana", WEEKDAY([Date], 2), -- 2 = Segunda-feira como dia 1
+    "Trimestre", "T" & QUARTER([Date]),
+    "Semestre", "S" & IF(MONTH([Date]) <= 6, 1, 2)
+)
